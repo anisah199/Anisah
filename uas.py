@@ -237,7 +237,24 @@ if pilihan_user == 4 :
         st.write('Sub Region:', 'Sub Region:', df_d_print_subRegion_all_min, '\n')
         st.write('Jumlah Produksi:', df_d_print_Produksi_all_min, '\n')
         st.write('Produksi Terkecil terjadi pada Tahun', df_d_print_Tahun_all_min, '\n')
-       
+
+    #kumulatif (perlu  list kode, region, sub-region yang kumulatif terus buat df dengan list kumulatif semua )
+    list_kode_kumulatif = []
+    list_region_kumulatif = []
+    list_subregion_kumulatif = []
+
+    for i in range(len(df_c)) :
+        for j in range(len(df_json)) :
+            if list(df_c['Nama Negara'])[i] == list(df_json['name'])[j]:
+                list_kode_kumulatif.append(list(df_json['alpha-3'])[j])
+                list_region_kumulatif.append(list(df_json['region'])[j])
+                list_subregion_kumulatif.append(list(df_json['sub-region'])[j])
+    df_d2 = pd.DataFrame(list(zip(list_NamaNegara_kumulatif_all, list_kode_kumulatif, list_region_kumulatif, list_subregion_kumulatif, list_produksi_kumulatif_all)), columns=[
+                             'Nama Negara','Kode Negara', 'Region', 'Sub-Region','Produksi Kumulatif']) 
+
+    df_d2_sort_k_max = df_d2.sort_values(by=['Produksi'], ascending=False)
+    df_d2_sort_k_min = df_d2.sort_values(by=['Produksi'], ascending=True)
+    
     with col1:
         st.header(f'Data Produksi Kumulatif Terbesar')
         st.subheader('Data Negara Terkait')
