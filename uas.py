@@ -238,6 +238,52 @@ if pilihan_user == 4 :
         st.write('Jumlah Produksi:', df_d_print_Produksi_all_min, '\n')
         st.write('Produksi Terkecil terjadi pada Tahun', df_d_print_Tahun_all_min, '\n')
         
+    #kumulatif (perlu  list kode, region, sub-region yang kumulatif terus buat df dengan list kumulatif semua )
+
+    list_kode_kumulatif= []
+    for i in list(df_d['Kode Negara']):
+        if i not in list_kode_kumulatif:
+                list_kode_kumulatif.append(i)
+
+    list_region_kumulatif= []
+    for i in list(df_d['Region']):
+        if i not in list_region_kumulatif:
+                list_region_kumulatif.append(i)
+
+    list_subregion_kumulatif= []
+    for i in list(df_d['Sub-Region']):
+        if i not in list_subregion_kumulatif:
+                list_subregion_kumulatif.append(i)
+
+    df_d2 = pd.DataFrame(list(zip(list_NamaNegara_kumulatif_all, list_kode_kumulatif, list_region_kumulatif, list_subregion_kumulatif, list_produksi_kumulatif_all)), columns=[
+                             'Nama Negara','Kode Negara', 'Region', 'Sub-Region','Produksi Kumulatif'])
+
+    #kumulatif terbesar 
+    df_d2_sort_k_max = df_d.sort_values(by=['Produksi Kumulatif'], ascending=False)
+    #kumulatif terkecil
+    df_d2_sort_k_min = df_d.sort_values(by=['Produksi Kumulatif'], ascending=True)
+    
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.header(f'Data Produksi Kumulatif Terbesar')
+        st.subheader('Data Negara Terkait')
+        st.write('Nama Negara:',df_d2_sort_k_max[:1].iloc[0]['Nama Negara'], '\n')
+        st.write('Kode Negara:', df_d2_sort_k_max[:1].iloc[0]['Kode Negara'], '\n')
+        st.write('Region:', df_d2_sort_k_max[:1].iloc[0]['Region'], '\n')
+        st.write('Sub Region:', df_d2_sort_k_max[:1].iloc[0]['Sub-Region'], '\n')
+        st.write('Jumlah Produksi:', df_d2_sort_k_max[:1].iloc[0]['Jumlah Produksi'],'\n')
+        
+
+    with col2:
+        st.header('Data Produksi Kumulatif Terkecil')
+        st.subheader('Data Negara Terkait')
+        st.write('Nama Negara:', df_d2_sort_k_min[:1].iloc[0]['Nama Negara'], '\n')
+        st.write('Kode Negara:', df_d2_sort_k_min[:1].iloc[0]['Kode Negara'], '\n')
+        st.write('Region:', df_d2_sort_k_min[:1].iloc[0]['Region'], '\n')
+        st.write('Sub Region:', 'Sub Region:', df_d2_sort_k_min[:1].iloc[0]['Sub-Region'], '\n')
+        st.write('Jumlah Produksi:', df_d2_sort_k_min[:1].iloc[0]['Jumlah Produksi'], '\n')
+        
     #produksi nol
     st.title('Data Lengkap Produksi Nol Minyak Mentah')
     #tahun pilihan user
