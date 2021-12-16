@@ -255,7 +255,7 @@ if pilihan_user == 4 :
         if i not in list_subregion_kumulatif:
                 list_subregion_kumulatif.append(i)
 
-    df_d2 = pd.DataFrame(list(zip(list_NamaNegara_kumulatif_all, list_kode_kumulatif, list_region_kumulatif, list_subregion_kumulatif, list_produksi_kumulatif_all)), columns=[
+    df_d2 = pd.DataFrame(list(zip(list_NamaNegara_kumulatif_all, list_kode_kumulatif, list_region_kumulatif, list_subregion_kumulatif, list_produksi_kumulatif_all))), columns=[
                              'Nama Negara','Kode Negara', 'Region', 'Sub-Region','Produksi Kumulatif'])
 
     #kumulatif terbesar 
