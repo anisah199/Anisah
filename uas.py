@@ -111,7 +111,7 @@ if pilihan_user == 2 :
     df_b = df_a.loc[df_a['Tahun'] == tahun_b]
     df_b_sort = df_b.sort_values(by=['Produksi'], ascending=False)
     df_b_print = df_b_sort[:banyak_b]
-    df_b_print.plot.bar(x='Nama Negara', y='Produksi', title = "Grafik Jumlah Produksi terbesar" , width = 0.8, color = ['goldenrod', 'goldenrod', 'gold','cornsilk'])
+    df_b_print.plot.bar(x='Nama Negara', y='Produksi', title = "Grafik Jumlah Produksi terbesar" , width = 0.8, color = ['goldenrod', 'goldenrod', 'gold'])
 
     grafik_b = plt.show()
     st.pyplot(grafik_b)
@@ -131,7 +131,7 @@ if pilihan_user == 3 :
     df_c = pd.DataFrame(list(zip(list_NamaNegara_kumulatif_all, list_produksi_kumulatif_all)), columns=['Nama Negara', 'Produksi Kumulatif']) #udah kumulatif
     df_c_sort= df_c.sort_values(by=['Produksi Kumulatif'], ascending=False).head(banyak_c) #ngurutin
 
-    df_c_sort.plot.bar(x='Nama Negara', y='Produksi Kumulatif', title = "Grafik Produksi Jumlah Kumulatif Terbesar", width = 0.8, color = ['goldenrod', 'goldenrod', 'gold','cornsilk'])
+    df_c_sort.plot.bar(x='Nama Negara', y='Produksi Kumulatif', title = "Grafik Produksi Jumlah Kumulatif Terbesar", width = 0.8, color = ['goldenrod', 'goldenrod', 'gold'])
     grafik_c = plt.show()
     st.pyplot(grafik_c)
 
