@@ -141,8 +141,7 @@ if pilihan_user == 3 :
     
     st.write('Anisah Zahrah Ayuputri | 12220128 | 12220128@mahasiswa.itb.ac.id') 
     
-#d'
-#keperluan data, butuh data frame isi: kode negara, nama negara, region, sub-region, tahun, produksi
+#d --> keperluan data, butuh data frame isi: kode negara, nama negara, region, sub-region, tahun, produksi
 if pilihan_user == 4 : 
     st.title('Data Lengkap Produksi Minyak Mentah Berbagai Negara')
 
