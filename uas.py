@@ -14,7 +14,7 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 
 st.sidebar.image('https://ditsti.itb.ac.id/wp-content/uploads/2020/09/logo_itb_128.png' )
       
-title = '<p style="font-family: sans-serif; font-size: 30px; text-align: left;"><b>Produksi Minyak Mentah Negara di Dunia Tahun 1971-2015</b></p>'
+title = '<p style="font-family: sans-serif; font-size: 40px; text-align: left;"><b>Produksi Minyak Mentah Negara di Dunia Tahun 1971-2015</b></p>'
 st.markdown(title, unsafe_allow_html=True)
 
 st.markdown(
@@ -150,7 +150,7 @@ if pilihan_user == 4 :
 
     df_d = pd.DataFrame(list(zip(list_NamaNegara, new_list_KodeNegara, list_Region, list_SubRegion, list_tahun, list_produksi)), columns=[
                          'Nama Negara','Kode Negara', 'Region', 'Sub-Region', 'Tahun', 'Produksi'])
-    tahun_d = st.slider('Produksi pada Tahun Berapa:', 1971, 2015)
+    tahun_d = st.slider('Produksi pada Tahun Berapa', 1971, 2015)
     tahun_d = int(tahun_d)
 
     #terbesar
@@ -193,7 +193,7 @@ if pilihan_user == 4 :
         st.write('Sub Region:', df_d_print_subRegion_all, '\n')
         st.write('Jumlah Produksi:', df_d_print_Produksi_all, '\n')
         st.write('Produksi Terbesar terjadi pada Tahun', df_d_print_Tahun_all, '\n')
-        
+     
 
     #terkecil (tidak nol)
 
