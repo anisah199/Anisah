@@ -175,7 +175,7 @@ if pilihan_user == 4 :
     col1, col2 = st.columns(2)
 
     with col1:
-        st.header('Data Produksi Terbesar Tahun', {tahun_d})
+        st.header(f'Data Produksi Terbesar Tahun {tahun_d})
         st.subheader('Data Negara Terkait')
         st.write('Nama Negara:', df_d_print_Negara, '\n')
         st.write('Kode Negara:', df_d_print_Kode, '\n')
@@ -219,7 +219,7 @@ if pilihan_user == 4 :
     col1, col2 = st.columns(2)
 
     with col1:
-        st.header('Data Produksi Tekecil Tahun', {tahun_d})
+        st.header(f'Data Produksi Tekecil Tahun {tahun_d}')
         st.subheader('Data Negara Terkait')
         st.write('Nama Negara:', df_d_print_Negara_min, '\n')
         st.write('Kode Negara:', df_d_print_Kode_min, '\n')
@@ -259,8 +259,8 @@ if pilihan_user == 4 :
     df_produksinol = pd.DataFrame(list(zip(list_Negara_nol, list_Kode_nol, list_Region_nol, list_SubRegion_nol)), columns=[
                             'Nama Negara','Kode Negara', 'Region', 'Sub-Region'])
                 
-    #print('Produksi Nol pada Tahun' , tahun_d)
-    st.title('Produksi Nol pada Tahun', {tahun_d})
+  
+    st.title(f'Produksi Nol pada Tahun {tahun_d}')
     st.caption('Di bawah ini terdapat tabel yang menunjukkan informasi mengenai negara dengan **_produksi minyak nol_** :arrow_down::arrow_down:')
     st.dataframe(df_produksinol)
 
