@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import streamlit as st
 
-df_csv = pd.read_csv('/Users/anisahzahrah/Downloads/produksi_minyak_mentah.csv') #dataframe
-with open("/Users/anisahzahrah/Downloads/kode_negara_lengkap.json") as f : 
+df_csv = pd.read_csv('produksi_minyak_mentah.csv') #dataframe
+with open("kode_negara_lengkap.json") as f : 
     file_json = json.load(f) 
 df_json = pd.DataFrame.from_dict(file_json, orient='columns')
 
