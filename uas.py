@@ -97,7 +97,9 @@ if pilihan_user == 1 :
 
     grafik_a = plt.show()
     st.pyplot(grafik_a)
-
+    
+    st.write('Anisah Zahrah Ayuputri | 12220128 | 12220128@mahasiswa.itb.ac.id') 
+    
 #b --> butuh data frame isi: nama negara, tahun, produksi (sama kaya poin a jadi bisa pake df_a)
 if pilihan_user == 2 : 
     st.title('Grafik Jumlah Produksi Minyak Mentah Terbesar')
@@ -115,7 +117,9 @@ if pilihan_user == 2 :
 
     grafik_b = plt.show()
     st.pyplot(grafik_b)
-
+    
+    st.write('Anisah Zahrah Ayuputri | 12220128 | 12220128@mahasiswa.itb.ac.id') 
+    
 #c butuh data frame isi: nama negara (tidak diulang), kumulatif produksi
 if pilihan_user == 3 : 
     st.title('Grafik Jumlah Produksi Minyak Mentah Kumulatif')
@@ -134,7 +138,9 @@ if pilihan_user == 3 :
     df_c_sort.plot.bar(x='Nama Negara', y='Produksi Kumulatif', title = "Grafik Produksi Jumlah Kumulatif Terbesar", width = 0.8, color = ['goldenrod', 'goldenrod', 'gold'])
     grafik_c = plt.show()
     st.pyplot(grafik_c)
-
+    
+    st.write('Anisah Zahrah Ayuputri | 12220128 | 12220128@mahasiswa.itb.ac.id') 
+    
 #d'
 #keperluan data, butuh data frame isi: kode negara, nama negara, region, sub-region, tahun, produksi
 if pilihan_user == 4 : 
@@ -290,3 +296,6 @@ if pilihan_user == 4 :
     st.title('Produksi Nol pada keseluruhan Tahun')
     st.caption('Di bawah ini terdapat tabel yang menunjukkan informasi mengenai negara dengan **_produksi minyak nol_ pada keseluruhan tahun** :arrow_down::arrow_down:')
     st.dataframe(df_produksinol_all)
+    
+    st.write('Anisah Zahrah Ayuputri | 12220128 | 12220128@mahasiswa.itb.ac.id') 
+    
