@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import streamlit as st
 
-df_csv = pd.read_csv('produksi_minyak_mentah.csv') #dataframe
-with open("kode_negara_lengkap.json") as f : 
+df_csv = pd.read_csv('/Users/anisahzahrah/Downloads/produksi_minyak_mentah.csv') #dataframe
+with open("/Users/anisahzahrah/Downloads/kode_negara_lengkap.json") as f : 
     file_json = json.load(f) 
 df_json = pd.DataFrame.from_dict(file_json, orient='columns')
 
@@ -240,6 +240,11 @@ if pilihan_user == 4 :
         
     #kumulatif (perlu  list kode, region, sub-region yang kumulatif terus buat df dengan list kumulatif semua )
 
+    list_nama_kumulatif= []
+    for i in list(df_d['Nama Negara']):
+        if i not in list_nama_kumulatif:
+                list_nama_kumulatif.append(i)
+
     list_kode_kumulatif= []
     for i in list(df_d['Kode Negara']):
         if i not in list_kode_kumulatif:
@@ -255,7 +260,7 @@ if pilihan_user == 4 :
         if i not in list_subregion_kumulatif:
                 list_subregion_kumulatif.append(i)
 
-    df_d2 = pd.DataFrame(list(zip(list_NamaNegara_kumulatif_all, list_kode_kumulatif, list_region_kumulatif, list_subregion_kumulatif, list_produksi_kumulatif_all)), columns=[
+    df_d2 = pd.DataFrame(list(zip(list_nama_kumulatif, list_kode_kumulatif, list_region_kumulatif, list_subregion_kumulatif, list_produksi_kumulatif_all)), columns=[
                              'Nama Negara','Kode Negara', 'Region', 'Sub-Region','Produksi Kumulatif'])
 
     #kumulatif terbesar 
