@@ -175,7 +175,7 @@ if pilihan_user == 4 :
     col1, col2 = st.columns(2)
 
     with col1:
-        st.header(f'Data Produksi Terbesar Tahun {tahun_d})
+        st.header(f'Data Produksi Terbesar Tahun {tahun_d}')
         st.subheader('Data Negara Terkait')
         st.write('Nama Negara:', df_d_print_Negara, '\n')
         st.write('Kode Negara:', df_d_print_Kode, '\n')
